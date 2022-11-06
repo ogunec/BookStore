@@ -1,0 +1,36 @@
+﻿
+@{
+	ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Company List</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a class="btn btn-primary" asp-controller="Company" asp-action="Upsert"><i class="bi bi-plus-circle"></i>&nbsp Create</a>
+		</div>
+	</div>
+	<br />
+
+
+	<table id="tblData" class="table table-bordered table-striped" style="width:100%">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Address</th>
+				<th>City</th>
+				<th>State</th>
+				<th>Phone Number</th>
+				<th></th>
+			</tr>
+		</thead>
+	</table>
+</div>
+
+@section Scripts{
+	<script src="~/js/company.js"></script>
+}
+
+

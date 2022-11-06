@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Category>
+@{
+	ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Category List</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a class="btn btn-primary" asp-controller="Category" asp-action="Create"><i class="bi bi-plus-circle"></i>&nbsp Create</a>
+		</div>
+	</div>
+	<br />
+
+
+	<table class="table table-bordered table-striped" style="width:100%">
+		<thead>
+			<tr>
+				<th style="width:60%">Category Name</th>
+				<th style="width:20%">Display Order</th>
+				<th class="text-center" style="width:20%">Functions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (Category item in Model)
+			{
+				<tr>
+					<td width="40%">@item.Name</td>
+					<td width="20%">@item.DisplayOrder</td>
+					<td class="text-center">
+						<div class="w-75 btn-group" role="group">
+							<a asp-action="Edit" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>&nbsp Edit</a>
+							<a asp-action="Delete" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-danger mx-2"><i class="bi bi-trash-fill"></i>&nbsp Delete</a>
+						</div>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+
